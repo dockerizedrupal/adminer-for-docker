@@ -2,10 +2,6 @@ class adminer::httpd {
   require adminer::packages
   require adminer::httpd::supervisor
 
-  exec { '/bin/bash -c "a2enmod actions"': }
-  exec { '/bin/bash -c "a2enmod rewrite"': }
-  exec { '/bin/bash -c "a2enmod ssl"': }
-
   file { '/etc/apache2/sites-enabled/000-default':
     ensure => absent
   }
