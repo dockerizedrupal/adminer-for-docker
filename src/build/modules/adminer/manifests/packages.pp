@@ -1,4 +1,4 @@
-class httpd::packages {
+class adminer::packages {
   exec { 'apt-get update':
     path => ['/usr/bin']
   }
