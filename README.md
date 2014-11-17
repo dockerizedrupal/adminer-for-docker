@@ -1,10 +1,10 @@
-# docker-adminer-dev
+# docker-adminer
 
 A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/).
 
 Only MySQL support at the moment.
 
-## Adminer (DEVELOPMENT BRANCH)
+## Adminer (STABLE BRANCH)
 
 ### Run the container
 
@@ -15,14 +15,13 @@ Using the `docker` command:
       -h "${CONTAINER}" \
       -p 80:80 \
       -d \
-      simpledrupalcloud/adminer:dev
+      simpledrupalcloud/adminer:latest
       
 Using the `fig` command
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout dev \
       && fig up
 
 ### Build the image
@@ -30,8 +29,7 @@ Using the `fig` command
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout dev \
-      && sudo docker build -t simpledrupalcloud/adminer:dev . \
+      && sudo docker build -t simpledrupalcloud/adminer:latest . \
       && cd -
 
 ## License

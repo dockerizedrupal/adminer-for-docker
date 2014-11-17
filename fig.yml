@@ -1,5 +1,5 @@
 adminer:
-  image: simpledrupalcloud/adminer:dev
+  image: simpledrupalcloud/adminer:latest
   hostname: adminer
   ports:
     - "80:80"
