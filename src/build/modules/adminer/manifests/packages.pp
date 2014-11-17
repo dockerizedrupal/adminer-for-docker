@@ -4,7 +4,8 @@ class adminer::packages {
   }
 
   package {[
-      'apache2'
+      'apache2',
+      'php5',
     ]:
     ensure => present,
     require => Exec['apt-get update']

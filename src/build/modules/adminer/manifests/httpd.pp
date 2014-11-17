@@ -8,6 +8,10 @@ class adminer::httpd {
     ensure => absent
   }
 
+  file { '/var/www/index.html':
+    ensure => absent
+  }
+
   file { '/etc/apache2/sites-available/default':
     ensure => present,
     source => 'puppet:///modules/adminer/etc/apache2/sites-available/default',
