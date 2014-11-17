@@ -43,4 +43,4 @@ function adminer_object() {
   return new AdminerSoftware;
 }
 
-include './index.php';
+include './adminer-4.1.0.php';
