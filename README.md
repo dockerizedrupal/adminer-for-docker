@@ -2,8 +2,6 @@
 
 A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/).
 
-Only MySQL support at the moment.
-
 ## Adminer (DEVELOPMENT BRANCH)
 
 ### Run the container
@@ -16,7 +14,7 @@ Using the `docker` command:
       -p 80:80 \
       -d \
       simpledrupalcloud/adminer:dev
-      
+
 Using the `fig` command
 
     TMP="$(mktemp -d)" \
@@ -24,6 +22,18 @@ Using the `fig` command
       && cd "${TMP}" \
       && git checkout dev \
       && fig up
+
+#### Connect directly to MySQL server by linking with another Docker container
+
+    CONTAINER="adminer" && sudo docker run \
+      --name "${CONTAINER}" \
+      -h "${CONTAINER}" \
+      -p 80:80 \
+      --link mysqld \
+      -e DB_USERNAME="root" \
+      -e DB_PASSWORD="root" \
+      -d \
+      simpledrupalcloud/adminer:dev
 
 ### Build the image
 
