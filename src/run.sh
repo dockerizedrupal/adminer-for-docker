@@ -24,6 +24,8 @@ if [ -n "${MYSQLD_PASSWORD}" ]; then
   export FACTER_MYSQLD_PASSWORD="${MYSQLD_PASSWORD}"
 fi
 
+env
+
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
