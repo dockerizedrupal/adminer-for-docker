@@ -3,3 +3,6 @@ adminer:
   hostname: adminer
   ports:
     - "80:80"
+environment:
+  - MYSQLD_USERNAME=root
+  - MYSQLD_PASSWORD=root

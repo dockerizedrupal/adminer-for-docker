@@ -3,12 +3,11 @@
 function adminer_object() {
   class AdminerSoftware extends Adminer {
     function credentials() {
-      // server, username and password for connecting to database
-      return array('localhost', 'ODBC', '');
+      return array(<%= @mysqld_port_3306_tcp %>, <%= @mysqld_username %>, <%= @mysqld_password %>);
     }
   }
 
   return new AdminerSoftware;
 }
 
-include './adminer-4.1.0.php';
+include './adminer.php';

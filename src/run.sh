@@ -16,6 +16,14 @@ fi
 
 export FACTER_MYSQLD_PORT_3306_TCP="$(echo "${MYSQLD_PORT_3306_TCP}" | sed 's/tcp:\/\///')"
 
+if [ -n "${MYSQLD_USERNAME}" ]; then
+  export FACTER_MYSQLD_USERNAME="${MYSQLD_USERNAME}"
+fi
+
+if [ -n "${MYSQLD_PASSWORD}" ]; then
+  export FACTER_MYSQLD_PASSWORD="${MYSQLD_PASSWORD}"
+fi
+
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
