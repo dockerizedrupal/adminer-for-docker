@@ -24,8 +24,6 @@ if [ -n "${DB_PASSWORD}" ]; then
   export FACTER_DB_PASSWORD="${DB_PASSWORD}"
 fi
 
-env
-
 puppet apply --modulepath=/src/run/modules /src/run/run.pp
 
 /usr/bin/supervisord
