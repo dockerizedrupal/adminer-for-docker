@@ -23,13 +23,13 @@ Using the `fig` command
       && git checkout dev \
       && fig up
 
-#### Connect directly to MySQL server by linking with another Docker container
+#### Connect automatically to MySQL server by linking with another Docker container
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
-      --link mysqld \
+      --link mysqld:db \
       -e DB_USERNAME="root" \
       -e DB_PASSWORD="root" \
       -d \
