@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export FACTER_DB_SERVER="$(echo "${DB_PORT}" | sed 's/tcp:\/\///')"
+export FACTER_DB_HOST="$(echo "${DB_PORT}" | sed 's/tcp:\/\///')"
 export FACTER_DB_USERNAME="${DB_USERNAME}"
 export FACTER_DB_PASSWORD="${DB_PASSWORD}"
 
