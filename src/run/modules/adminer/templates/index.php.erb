@@ -3,11 +3,11 @@
 function adminer_object() {
   class AdminerSoftware extends Adminer {
     function credentials() {
-      return array('<%= @mysqld_port_3306_tcp %>', '<%= @mysqld_username %>', '<%= @mysqld_password %>');
+      return array('<%= @$db_server %>', '<%= @db_username %>', '<%= @db_password %>');
     }
   }
 
   return new AdminerSoftware;
 }
 
-include './adminer.php';
+include_once './adminer.php';

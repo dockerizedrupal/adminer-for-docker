@@ -14,14 +14,14 @@ if [ -z "${MYSQLD_PORT_3306_TCP}" ] && [ -n "${MYSQLD_PORT_3306_TCP_ADDR}" ] && 
   MYSQLD_PORT_3306_TCP="tcp://${MYSQLD_PORT_3306_TCP_ADDR}:${MYSQLD_PORT_3306_TCP_PORT}"
 fi
 
-export FACTER_MYSQLD_PORT_3306_TCP="$(echo "${MYSQLD_PORT_3306_TCP}" | sed 's/tcp:\/\///')"
+export FACTER_DB_SERVER="$(echo "${MYSQLD_PORT_3306_TCP}" | sed 's/tcp:\/\///')"
 
-if [ -n "${MYSQLD_USERNAME}" ]; then
-  export FACTER_MYSQLD_USERNAME="${MYSQLD_USERNAME}"
+if [ -n "${DB_USERNAME}" ]; then
+  export FACTER_DB_USERNAME="${DB_USERNAME}"
 fi
 
-if [ -n "${MYSQLD_PASSWORD}" ]; then
-  export FACTER_MYSQLD_PASSWORD="${MYSQLD_PASSWORD}"
+if [ -n "${DB_PASSWORD}" ]; then
+  export FACTER_DB_PASSWORD="${DB_PASSWORD}"
 fi
 
 env

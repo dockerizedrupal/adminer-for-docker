@@ -14,8 +14,6 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -p 80:80 \
-      -e MYSQLD_USERNAME="root" \
-      -e MYSQLD_PASSWORD="root" \
       -d \
       simpledrupalcloud/adminer:dev
       
