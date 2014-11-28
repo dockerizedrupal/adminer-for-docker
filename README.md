@@ -20,7 +20,7 @@ Using the `fig` command
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && fig up
+      && sudo fig up
 
 #### Connect automatically to MySQL server by linking with another Docker container
 
