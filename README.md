@@ -1,4 +1,4 @@
-# docker-adminer-dev
+# docker-adminer
 
 A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/).
 
@@ -21,9 +21,9 @@ Using the `fig` command
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout dev \
-      && fig up
+      && sudo fig up
 
-#### Connect automatically to MySQL server by linking with another Docker container
+#### Connect directly to MySQL server by linking with another Docker container
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
