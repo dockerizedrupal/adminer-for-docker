@@ -2,9 +2,7 @@
 
 A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/).
 
-## Adminer (DEVELOPMENT BRANCH)
-
-### Run the container
+## Run the container
 
 Using the `docker` command:
 
@@ -24,7 +22,7 @@ Using the `fig` command
       && git checkout dev \
       && sudo fig up
 
-#### Connect directly to MySQL server by linking with another Docker container
+### Connect directly to MySQL server by linking with another Docker container
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -37,7 +35,7 @@ Using the `fig` command
       -d \
       simpledrupalcloud/adminer:dev
 
-### Build the image
+## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
