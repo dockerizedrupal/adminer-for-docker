@@ -1,4 +1,4 @@
-class adminer::packages {
+class adminer::php::packages {
   package {[
       'php5',
       'php5-mysql'
