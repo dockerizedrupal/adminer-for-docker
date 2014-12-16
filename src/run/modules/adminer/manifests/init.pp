@@ -1,5 +1,5 @@
 class adminer {
-  file { '/var/www/index.php':
+  file { '/httpd/data/index.php':
     ensure => present,
     content => template('adminer/index.php.erb')
   }

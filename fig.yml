@@ -3,3 +3,14 @@ adminer:
   hostname: adminer
   ports:
     - "80:80"
+    - "443:443"
+  volumes_from:
+    - adminerdata
+  environment:
+    - SERVER_NAME=localhost
+adminerdata:
+  image: simpledrupalcloud/data:dev
+  hostname: adminerdata
+  volumes:
+    - /httpd/ssl/certs
+    - /httpd/ssl/private
