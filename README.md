@@ -62,7 +62,7 @@ Using the `fig` command
       && sudo docker build -t simpledrupalcloud/adminer:dev . \
       && cd -
 
-## Back up phpMyAdmin data
+## Back up Adminer data
 
     sudo docker run \
       --rm \
@@ -70,7 +70,7 @@ Using the `fig` command
       -v $(pwd):/backup \
       simpledrupalcloud/data:dev tar czvf /backup/adminerdata.tar.gz /httpd/ssl/certs /httpd/ssl/private
 
-## Restore phpMyAdmin data from a backup
+## Restore Adminer data from a backup
 
     sudo docker run \
       --rm \
