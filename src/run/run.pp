@@ -1,5 +1,3 @@
 node default {
-  if $db_host {
-    include adminer
-  }
+  include adminer
 }
