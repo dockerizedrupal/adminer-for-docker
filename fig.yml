@@ -9,7 +9,7 @@ adminer:
   environment:
     - SERVER_NAME=localhost
 adminerdata:
-  image: simpledrupalcloud/data:dev
+  image: simpledrupalcloud/data:latest
   hostname: adminerdata
   volumes:
     - /httpd/ssl/certs
