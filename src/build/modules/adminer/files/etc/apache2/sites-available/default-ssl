@@ -1,0 +1,16 @@
+<IfModule mod_ssl.c>
+  <VirtualHost *:443>
+    DocumentRoot /adminer/data
+
+    <Directory "/adminer/data">
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride All
+      Order allow,deny
+      Allow from all
+    </Directory>
+
+    SSLEngine on
+    SSLCertificateFile /adminer/ssl/certs/adminer.crt
+    SSLCertificateKeyFile /adminer/ssl/private/adminer.key
+  </VirtualHost>
+</IfModule>

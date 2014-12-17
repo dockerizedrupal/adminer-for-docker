@@ -12,5 +12,5 @@ adminerdata:
   image: simpledrupalcloud/data:latest
   hostname: adminerdata
   volumes:
-    - /httpd/ssl/certs
-    - /httpd/ssl/private
+    - /adminer/ssl/certs
+    - /adminer/ssl/private
