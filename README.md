@@ -30,7 +30,7 @@ Using the `fig` command
       && cd "${TMP}" \
       && sudo fig up
 
-### Connect directly to MySQL server by linking with another Docker container
+## Connect directly to MySQL server by linking with another Docker container
 
     CONTAINER="adminerdata" && sudo docker run \
       --name "${CONTAINER}" \
