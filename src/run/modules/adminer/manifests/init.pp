@@ -1,5 +1,7 @@
 class adminer {
-  require adminer::httpd::ssl
+  if ! file_exists('/adminer/ssl/certs/vhost.crt') {
+    require adminer::httpd::ssl
+  }
 
   if $db_host {
     file { '/adminer/data/index.php':
