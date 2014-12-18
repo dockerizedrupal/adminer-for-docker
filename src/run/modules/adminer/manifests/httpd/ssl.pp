@@ -27,6 +27,6 @@ class adminer::httpd::ssl {
   exec { "openssl x509 -req -in /adminer/ssl/certs/adminer.csr -CA /adminer/ssl/certs/adminerCA.crt -CAkey /adminer/ssl/private/adminerCA.key -CAcreateserial -out /adminer/ssl/certs/adminer.crt -days 365":
     timeout => 0,
     path => ['/usr/bin'],
-    require => Exec["openssl req -new -key /adminer/ssl/private/adminer.key -subj $subj -out /adminer/ssl/certs/adminer.csr"]
+    require => Exec["openssl req -sha256 -new -key /adminer/ssl/private/adminer.key -subj $subj -out /adminer/ssl/certs/adminer.csr"]
   }
 }
