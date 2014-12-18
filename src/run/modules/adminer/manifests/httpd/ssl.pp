@@ -18,7 +18,7 @@ class adminer::httpd::ssl {
 
   $subj = "/C=/ST=/L=/O=/CN=$server_name"
 
-  exec { "openssl req -new -key /adminer/ssl/private/adminer.key -subj $subj -out /adminer/ssl/certs/adminer.csr":
+  exec { "openssl req -sha256 -new -key /adminer/ssl/private/adminer.key -subj $subj -out /adminer/ssl/certs/adminer.csr":
     timeout => 0,
     path => ['/usr/bin'],
     require => Exec['openssl genrsa -out /adminer/ssl/private/adminer.key 4096']
