@@ -17,4 +17,4 @@ VOLUME ["/adminer/ssl/private"]
 EXPOSE 80
 EXPOSE 443
 
-CMD ["/src/run.sh"]
+CMD ["/bin/su", "-", "root", "-mc", "/src/run.sh"]
