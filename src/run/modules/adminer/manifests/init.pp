@@ -1,5 +1,5 @@
 class adminer {
-  if ! file_exists('/adminer/ssl/certs/vhost.crt') {
+  if ! file_exists('/adminer/ssl/certs/adminer.crt') {
     require adminer::httpd::ssl
   }
 
