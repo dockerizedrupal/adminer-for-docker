@@ -68,7 +68,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/data:dev tar czvf /backup/adminerdata.tar.gz /adminer/ssl/certs /adminer/ssl/private
+      simpledrupalcloud/base:dev tar czvf /backup/adminerdata.tar.gz /adminer/ssl/certs /adminer/ssl/private
 
 ## Restore Adminer data from a backup
 
@@ -76,7 +76,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/data:dev tar xzvf /backup/adminerdata.tar.gz
+      simpledrupalcloud/base:dev tar xzvf /backup/adminerdata.tar.gz
 
 ## License
 
