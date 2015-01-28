@@ -2,13 +2,13 @@ class adminer {
   require adminer::php
   require adminer::httpd
 
-  file { '/adminer/data/adminer.php':
+  file { '/var/www/adminer.php':
     ensure => present,
-    source => 'puppet:///modules/adminer/adminer/data/adminer.php'
+    source => 'puppet:///modules/adminer/var/www/adminer.php'
   }
 
-  file { '/adminer/data/index.php':
+  file { '/var/www/index.php':
     ensure => present,
-    source => 'puppet:///modules/adminer/adminer/data/index.php'
+    source => 'puppet:///modules/adminer/var/www/index.php'
   }
 }

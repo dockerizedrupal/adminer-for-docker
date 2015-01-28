@@ -9,8 +9,7 @@ Using the `docker` command:
     CONTAINER="adminerdata" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
-      -v /adminer/ssl/certs \
-      -v /adminer/ssl/private \
+      -v /adminer \
       simpledrupalcloud/data:dev
 
     CONTAINER="adminer" && sudo docker run \
@@ -36,8 +35,7 @@ Using the `fig` command
     CONTAINER="adminerdata" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
-      -v /adminer/ssl/certs \
-      -v /adminer/ssl/private \
+      -v /adminer \
       simpledrupalcloud/data:dev
       
     CONTAINER="adminer" && sudo docker run \
@@ -68,7 +66,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar czvf /backup/adminerdata.tar.gz /adminer/ssl/certs /adminer/ssl/private
+      simpledrupalcloud/base:dev tar czvf /backup/adminerdata.tar.gz /adminer
 
 ## Restore Adminer data from a backup
 
