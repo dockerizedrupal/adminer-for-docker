@@ -1,8 +1,8 @@
 <IfModule mod_ssl.c>
   <VirtualHost *:443>
-    DocumentRoot /adminer/data
+    DocumentRoot /var/www
 
-    <Directory "/adminer/data">
+    <Directory "/var/www">
       Options Indexes FollowSymLinks MultiViews
       AllowOverride All
       Order allow,deny
