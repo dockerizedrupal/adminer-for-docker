@@ -12,8 +12,7 @@ RUN apt-get update
 RUN /src/build.sh
 RUN /src/clean.sh
 
-VOLUME ["/adminer/ssl/certs"]
-VOLUME ["/adminer/ssl/private"]
+VOLUME ["/adminer"]
 
 EXPOSE 80
 EXPOSE 443

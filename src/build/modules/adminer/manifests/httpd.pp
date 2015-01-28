@@ -2,19 +2,15 @@ class adminer::httpd {
   require adminer::httpd::packages
   require adminer::httpd::supervisor
 
-  exec { 'mkdir -p /adminer/data':
-    path => ['/bin']
-  }
-
-  exec { 'usermod -d /adminer/data www-data':
-    path => ['/usr/sbin']
-  }
-
   exec { '/bin/bash -c "a2enmod actions"': }
   exec { '/bin/bash -c "a2enmod fastcgi"': }
   exec { '/bin/bash -c "a2enmod vhost_alias"': }
   exec { '/bin/bash -c "a2enmod rewrite"': }
   exec { '/bin/bash -c "a2enmod ssl"': }
+
+  file { '/var/www/index.html':
+    ensure => absent
+  }
 
   file { '/etc/apache2/sites-enabled/000-default':
     ensure => absent

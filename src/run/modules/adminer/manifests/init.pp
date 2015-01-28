@@ -4,7 +4,7 @@ class adminer {
   }
 
   if $mysqld_host {
-    file { '/adminer/data/index.php':
+    file { '/var/www/index.php':
       ensure  => present,
       content => template('adminer/index.php.erb')
     }
