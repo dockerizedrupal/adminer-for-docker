@@ -1,4 +1,4 @@
-class adminer::adminer::ssl {
+class adminer::httpd::ssl {
   exec { 'mkdir -p /adminer/ssl':
     path => ['/bin']
   }
