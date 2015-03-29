@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      simpledrupalcloud/data:dev
+      viljaste/data:dev
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -20,7 +20,7 @@ Using the `docker` command:
       --volumes-from adminerdata \
       -e SERVER_NAME="localhost" \
       -d \
-      simpledrupalcloud/adminer:dev
+      viljaste/adminer:dev
 
 Using the `fig` command
 
@@ -36,7 +36,7 @@ Using the `fig` command
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      simpledrupalcloud/data:dev
+      viljaste/data:dev
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -49,7 +49,7 @@ Using the `fig` command
       -e MYSQLD_USERNAME="root" \
       -e MYSQLD_PASSWORD="root" \
       -d \
-      simpledrupalcloud/adminer:dev
+      viljaste/adminer:dev
 
 ## Build the image
 
@@ -57,7 +57,7 @@ Using the `fig` command
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
       && git checkout dev \
-      && sudo docker build -t simpledrupalcloud/adminer:dev . \
+      && sudo docker build -t viljaste/adminer:dev . \
       && cd -
 
 ## Back up Adminer data
@@ -66,7 +66,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar czvf /backup/adminerdata.tar.gz /adminer
+      viljaste/base:dev tar czvf /backup/adminerdata.tar.gz /adminer
 
 ## Restore Adminer data from a backup
 
@@ -74,7 +74,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:dev tar xzvf /backup/adminerdata.tar.gz
+      viljaste/base:dev tar xzvf /backup/adminerdata.tar.gz
 
 ## License
 
