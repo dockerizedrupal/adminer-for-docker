@@ -1,5 +1,5 @@
 adminer:
-  image: simpledrupalcloud/adminer:latest
+  image: viljaste/adminer:latest
   hostname: adminer
   ports:
     - "80:80"
@@ -9,7 +9,7 @@ adminer:
   environment:
     - SERVER_NAME=localhost
 adminerdata:
-  image: simpledrupalcloud/data:latest
+  image: viljaste/data:latest
   hostname: adminerdata
   volumes:
     - /adminer

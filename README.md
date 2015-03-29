@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      simpledrupalcloud/data:latest
+      viljaste/data:latest
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -20,13 +20,14 @@ Using the `docker` command:
       --volumes-from adminerdata \
       -e SERVER_NAME="localhost" \
       -d \
-      simpledrupalcloud/adminer:latest
+      viljaste/adminer:latest
 
 Using the `fig` command
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
+      && git checkout dev \
       && sudo fig up
 
 ## Connect directly to MySQL server by linking with another Docker container
@@ -35,7 +36,7 @@ Using the `fig` command
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      simpledrupalcloud/data:latest
+      viljaste/data:latest
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -48,14 +49,14 @@ Using the `fig` command
       -e MYSQLD_USERNAME="root" \
       -e MYSQLD_PASSWORD="root" \
       -d \
-      simpledrupalcloud/adminer:latest
+      viljaste/adminer:latest
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone http://git.simpledrupalcloud.com/simpledrupalcloud/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && sudo docker build -t simpledrupalcloud/adminer:latest . \
+      && sudo docker build -t viljaste/adminer:latest . \
       && cd -
 
 ## Back up Adminer data
@@ -64,7 +65,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:latest tar czvf /backup/adminerdata.tar.gz /adminer
+      viljaste/base:latest tar czvf /backup/adminerdata.tar.gz /adminer
 
 ## Restore Adminer data from a backup
 
@@ -72,7 +73,7 @@ Using the `fig` command
       --rm \
       --volumes-from adminerdata \
       -v $(pwd):/backup \
-      simpledrupalcloud/base:latest tar xzvf /backup/adminerdata.tar.gz
+      viljaste/base:latest tar xzvf /backup/adminerdata.tar.gz
 
 ## License
 
