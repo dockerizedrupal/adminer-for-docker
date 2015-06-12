@@ -10,6 +10,8 @@ adminer:
     - SERVER_NAME=localhost
     - TIMEOUT=300
     - PROTOCOLS=https
+    - USERNAME=root
+    - PASSWORD=root
 adminerdata:
   image: viljaste/data:latest
   hostname: adminerdata
