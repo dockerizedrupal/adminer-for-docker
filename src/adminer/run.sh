@@ -2,4 +2,4 @@
 
 puppet apply --modulepath=/src/adminer/run/modules /src/adminer/run/run.pp
 
-/usr/bin/supervisord
+supervisord -c /etc/supervisor/supervisord.conf
