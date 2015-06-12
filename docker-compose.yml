@@ -8,6 +8,8 @@ adminer:
     - adminerdata
   environment:
     - SERVER_NAME=localhost
+    - TIMEOUT=300
+    - PROTOCOLS=https
 adminerdata:
   image: viljaste/data:latest
   hostname: adminerdata
