@@ -20,7 +20,7 @@ Using the `docker` command:
       --volumes-from adminerdata \
       -e SERVER_NAME="localhost" \
       -e TIMEOUT="300" \
-      -e PROTOCOLS="https" \
+      -e PROTOCOLS="https,http" \
       -d \
       viljaste/adminer:latest
 
@@ -48,7 +48,7 @@ Using the `docker-compose` command
       --link mysqld:mysqld \
       -e SERVER_NAME="localhost" \
       -e TIMEOUT="300" \
-      -e PROTOCOLS="https" \
+      -e PROTOCOLS="https,http" \
       -e MYSQLD_USERNAME="root" \
       -e MYSQLD_PASSWORD="root" \
       -d \
