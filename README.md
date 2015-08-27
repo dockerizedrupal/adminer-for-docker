@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      viljaste/data:latest
+      dockerizedrupal/data:latest
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -22,12 +22,12 @@ Using the `docker` command:
       -e TIMEOUT="300" \
       -e PROTOCOLS="https,http" \
       -d \
-      viljaste/adminer:latest
+      dockerizedrupal/adminer:latest
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
-      && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-adminer.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
       && sudo docker-compose up
 
@@ -37,7 +37,7 @@ Using the `docker-compose` command
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      viljaste/data:latest
+      dockerizedrupal/data:latest
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -52,14 +52,14 @@ Using the `docker-compose` command
       -e MYSQLD_USERNAME="root" \
       -e MYSQLD_PASSWORD="root" \
       -d \
-      viljaste/adminer:latest
+      dockerizedrupal/adminer:latest
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
-      && GIT_SSL_NO_VERIFY=true git clone https://git.beyondcloud.io/viljaste/docker-adminer.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && sudo docker build -t viljaste/adminer:latest . \
+      && sudo docker build -t dockerizedrupal/adminer:latest . \
       && cd -
 
 ## License

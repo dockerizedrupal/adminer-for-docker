@@ -1,5 +1,5 @@
 adminer:
-  image: viljaste/adminer:latest
+  image: dockerizedrupal/adminer:latest
   hostname: adminer
   ports:
     - "80:80"
@@ -13,7 +13,7 @@ adminer:
     - USERNAME=root
     - PASSWORD=root
 adminerdata:
-  image: viljaste/data:latest
+  image: dockerizedrupal/data:latest
   hostname: adminerdata
   volumes:
     - /adminer
