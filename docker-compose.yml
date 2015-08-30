@@ -5,15 +5,15 @@ adminer:
     - "80:80"
     - "443:443"
   volumes_from:
-    - adminerdata
+    - adminer-data
   environment:
     - SERVER_NAME=localhost
     - TIMEOUT=300
     - PROTOCOLS=https,http
     - USERNAME=root
     - PASSWORD=root
-adminerdata:
+adminer-data:
   image: dockerizedrupal/data:latest
-  hostname: adminerdata
+  hostname: adminer-data
   volumes:
     - /adminer

@@ -6,7 +6,7 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
 
 Using the `docker` command:
 
-    CONTAINER="adminerdata" && sudo docker run \
+    CONTAINER="adminer-data" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
@@ -17,7 +17,7 @@ Using the `docker` command:
       -h "${CONTAINER}" \
       -p 80:80 \
       -p 443:443 \
-      --volumes-from adminerdata \
+      --volumes-from adminer-data \
       -e SERVER_NAME="localhost" \
       -e TIMEOUT="300" \
       -e PROTOCOLS="https,http" \
@@ -33,7 +33,7 @@ Using the `docker-compose` command
 
 ## Connect directly to MySQL server by linking with another Docker container
 
-    CONTAINER="adminerdata" && sudo docker run \
+    CONTAINER="adminer-data" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
@@ -44,7 +44,7 @@ Using the `docker-compose` command
       -h "${CONTAINER}" \
       -p 80:80 \
       -p 443:443 \
-      --volumes-from adminerdata \
+      --volumes-from adminer-data \
       --link mysqld:mysqld \
       -e SERVER_NAME="localhost" \
       -e TIMEOUT="300" \
