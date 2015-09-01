@@ -1,7 +1,7 @@
 class adminer {
-  include adminer::httpd
+  include adminer::apache
 
-  if $mysqld_host {
+  if $mysql_host {
     file { '/var/www/index.php':
       ensure  => present,
       content => template('adminer/index.php.erb')

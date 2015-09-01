@@ -1,4 +1,4 @@
-class adminer::httpd::ssl {
+class adminer::apache::ssl {
   bash_exec { 'mkdir -p /adminer/ssl': }
 
   bash_exec { 'mkdir -p /adminer/ssl/private':

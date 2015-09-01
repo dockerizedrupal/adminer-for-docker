@@ -1,6 +1,6 @@
-class adminer::httpd {
-  require adminer::httpd::packages
-  require adminer::httpd::supervisor
+class adminer::apache {
+  require adminer::apache::packages
+  require adminer::apache::supervisor
 
   bash_exec { 'a2enmod actions': }
   bash_exec { 'a2enmod proxy_fcgi': }

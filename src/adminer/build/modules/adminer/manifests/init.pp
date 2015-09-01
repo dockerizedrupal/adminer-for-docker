@@ -1,6 +1,6 @@
 class adminer {
   require adminer::php
-  require adminer::httpd
+  require adminer::apache
 
   file { '/var/www/adminer.php':
     ensure => present,

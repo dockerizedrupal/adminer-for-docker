@@ -1,4 +1,4 @@
-class adminer::httpd::server_name {
+class adminer::apache::server_name {
   file { '/etc/apache2/conf-available/server_name.conf':
     ensure => present,
     content => template('adminer/server_name.conf.erb'),

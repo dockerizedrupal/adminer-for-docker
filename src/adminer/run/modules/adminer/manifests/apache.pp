@@ -1,10 +1,10 @@
-class adminer::httpd {
-  include adminer::httpd::server_name
-  include adminer::httpd::timeout
+class adminer::apache {
+  include adminer::apache::server_name
+  include adminer::apache::timeout
 
   if $http and $https {
     if ! file_exists('/adminer/ssl/certs/adminer.crt') {
-      require adminer::httpd::ssl
+      require adminer::apache::ssl
     }
 
     file { '/etc/apache2/sites-available/http_https.conf':
@@ -46,7 +46,7 @@ class adminer::httpd {
   }
   elsif $https {
     if ! file_exists('/adminer/ssl/certs/adminer.crt') {
-      require adminer::httpd::ssl
+      require adminer::apache::ssl
     }
 
     file { '/etc/apache2/sites-available/https.conf':

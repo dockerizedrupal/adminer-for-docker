@@ -1,4 +1,4 @@
-class adminer::httpd::packages {
+class adminer::apache::packages {
   package {[
       'apache2'
     ]:

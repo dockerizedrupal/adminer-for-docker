@@ -1,4 +1,4 @@
-class adminer::httpd::timeout {
+class adminer::apache::timeout {
   file { '/etc/apache2/conf-available/timeout.conf':
     ensure => present,
     content => template('adminer/timeout.conf.erb'),
