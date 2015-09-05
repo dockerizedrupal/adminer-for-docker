@@ -1,5 +1,5 @@
 adminer:
-  image: dockerizedrupal/adminer:1.0.3
+  image: dockerizedrupal/adminer:1.0.4
   hostname: adminer
   ports:
     - "80:80"
@@ -15,7 +15,7 @@ adminer:
     - MYSQL_USERNAME=root
     - MYSQL_PASSWORD=root
 adminer-data:
-  image: dockerizedrupal/data:1.0.2
+  image: dockerizedrupal/data:1.0.3
   hostname: adminer-data
   volumes:
     - /adminer

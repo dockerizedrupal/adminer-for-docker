@@ -10,7 +10,7 @@ Using the `docker` command:
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.0.2
+      dockerizedrupal/data:1.0.3
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -26,14 +26,14 @@ Using the `docker` command:
       -e MYSQL_USERNAME="root" \
       -e MYSQL_PASSWORD="root" \
       -d \
-      dockerizedrupal/adminer:1.0.3
+      dockerizedrupal/adminer:1.0.4
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.3 \
+      && git checkout 1.0.4 \
       && sudo docker-compose up
 
 ## Connect directly to MySQL server by linking with another Docker container
@@ -42,7 +42,7 @@ Using the `docker-compose` command
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.0.2
+      dockerizedrupal/data:1.0.3
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -57,15 +57,15 @@ Using the `docker-compose` command
       -e MYSQL_USERNAME="root" \
       -e MYSQL_PASSWORD="root" \
       -d \
-      dockerizedrupal/adminer:1.0.3
+      dockerizedrupal/adminer:1.0.4
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.3 \
-      && sudo docker build -t dockerizedrupal/adminer:1.0.3 . \
+      && git checkout 1.0.4 \
+      && sudo docker build -t dockerizedrupal/adminer:1.0.4 . \
       && cd -
 
 ## License
