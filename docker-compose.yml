@@ -1,5 +1,5 @@
 adminer:
-  image: dockerizedrupal/adminer:1.0.4
+  image: dockerizedrupal/adminer:1.0.5
   hostname: adminer
   ports:
     - "80:80"
@@ -8,6 +8,7 @@ adminer:
     - adminer-data
   environment:
     - SERVER_NAME=localhost
+    - TIMEZONE=Etc/UTC
     - TIMEOUT=300
     - PROTOCOLS=https,http
     - MYSQL_HOST=

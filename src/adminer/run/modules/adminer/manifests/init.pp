@@ -1,5 +1,6 @@
 class adminer {
   include adminer::apache
+  include adminer::timezone
 
   if $mysql_host {
     file { '/var/www/index.php':
