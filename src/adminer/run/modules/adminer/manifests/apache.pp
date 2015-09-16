@@ -2,6 +2,10 @@ class adminer::apache {
   include adminer::apache::server_name
   include adminer::apache::timeout
 
+  if $http_basic_auth_password {
+    include adminer::apache::http_basic_auth
+  }
+
   if $http and $https {
     if ! file_exists('/adminer/ssl/certs/adminer.crt') {
       require adminer::apache::ssl
