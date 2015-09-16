@@ -29,14 +29,14 @@ Using the `docker` command:
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.10
+      dockerizedrupal/adminer:1.0.11
 
 Using the `docker-compose` command
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.9 \
+      && git checkout 1.0.11 \
       && sudo docker-compose up
 
 ## Connect directly to MySQL server by linking with another Docker container
@@ -63,15 +63,15 @@ Using the `docker-compose` command
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.10
+      dockerizedrupal/adminer:1.0.11
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.9 \
-      && sudo docker build -t dockerizedrupal/adminer:1.0.10 . \
+      && git checkout 1.0.11 \
+      && sudo docker build -t dockerizedrupal/adminer:1.0.11 . \
       && cd -
 
 ## License
