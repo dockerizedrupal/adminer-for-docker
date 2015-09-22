@@ -4,8 +4,6 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
 
 ## Run the container
 
-Using the `docker` command:
-
     CONTAINER="adminer-data" && sudo docker run \
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
@@ -29,17 +27,9 @@ Using the `docker` command:
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.11
+      dockerizedrupal/adminer:1.0.12
 
-Using the `docker-compose` command
-
-    TMP="$(mktemp -d)" \
-      && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
-      && cd "${TMP}" \
-      && git checkout 1.0.11 \
-      && sudo docker-compose up
-
-## Connect directly to MySQL server by linking with another Docker container
+## Connect directly to MySQL server by linking to another Docker container
 
     CONTAINER="adminer-data" && sudo docker run \
       --name "${CONTAINER}" \
@@ -56,23 +46,27 @@ Using the `docker-compose` command
       --link mysql:mysql \
       -e SERVER_NAME="localhost" \
       -e TIMEZONE="Etc/UTC" \
-      -e TIMEOUT="300" \
       -e PROTOCOLS="https,http" \
       -e MYSQL_USERNAME="container" \
       -e MYSQL_PASSWORD="container" \
+      -e PHP_INI_MAX_EXECUTION_TIME="900" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.11
+      dockerizedrupal/adminer:1.0.12
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.11 \
-      && sudo docker build -t dockerizedrupal/adminer:1.0.11 . \
+      && git checkout 1.0.12 \
+      && sudo docker build -t dockerizedrupal/adminer:1.0.12   . \
       && cd -
+
+## Changing the container behaviour on runtime through environment variables
+
+    // TODO
 
 ## License
 

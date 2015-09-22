@@ -1,5 +1,6 @@
 class adminer {
   include adminer::apache
+  include adminer::php
   include adminer::timezone
 
   if $mysql_host {
