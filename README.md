@@ -27,7 +27,7 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.13
+      dockerizedrupal/adminer:1.0.14
 
 ## Connect directly to MySQL server by linking to another Docker container
 
@@ -53,15 +53,15 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.13
+      dockerizedrupal/adminer:1.0.14
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.13 \
-      && sudo docker build -t dockerizedrupal/adminer:1.0.13   . \
+      && git checkout 1.0.14 \
+      && sudo docker build -t dockerizedrupal/adminer:1.0.14   . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables

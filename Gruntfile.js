@@ -1,5 +1,5 @@
-var current_version = '1.0.12';
-var new_version = '1.0.13';
+var current_version = '1.0.13';
+var new_version = '1.0.14';
 
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-replace');
@@ -7,48 +7,6 @@ module.exports = function(grunt) {
   grunt.initConfig({
     replace: {
       task1: {
-        options: {
-          patterns: [
-            {
-              match: 'dockerizedrupal/adminer:' + current_version,
-              replacement: 'dockerizedrupal/adminer:' + new_version
-            },
-            {
-              match: 'git checkout ' + current_version,
-              replacement: 'git checkout ' + new_version
-            }
-          ],
-          usePrefix: false
-        },
-        files: [
-          {
-            expand: true,
-            src: [
-              'README.md',
-            ]
-          }
-        ]
-      },
-      task2: {
-        options: {
-          patterns: [
-            {
-              match: '"version": "' + current_version + '"',
-              replacement: '"version": "' + new_version + '"'
-            }
-          ],
-          usePrefix: false
-        },
-        files: [
-          {
-            expand: true,
-            src: [
-              'package.json'
-            ]
-          }
-        ]
-      },
-      task3: {
         options: {
           patterns: [
             {
@@ -67,7 +25,7 @@ module.exports = function(grunt) {
           }
         ]
       },
-      task4: {
+      task2: {
         options: {
           patterns: [
             {
@@ -82,10 +40,49 @@ module.exports = function(grunt) {
             expand: true,
             src: [
               'docker-compose.yml',
+              'README.md'
             ]
           }
         ]
       },
+      task3: {
+        options: {
+          patterns: [
+            {
+              match: 'git checkout ' + current_version,
+              replacement: 'git checkout ' + new_version
+            }
+          ],
+          usePrefix: false
+        },
+        files: [
+          {
+            expand: true,
+            src: [
+              'README.md'
+            ]
+          }
+        ]
+      },
+      task4: {
+        options: {
+          patterns: [
+            {
+              match: '"version": "' + current_version + '"',
+              replacement: '"version": "' + new_version + '"'
+            }
+          ],
+          usePrefix: false
+        },
+        files: [
+          {
+            expand: true,
+            src: [
+              'package.json'
+            ]
+          }
+        ]
+      }
     }
   });
 
