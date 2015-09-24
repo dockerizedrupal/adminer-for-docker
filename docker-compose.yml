@@ -1,5 +1,5 @@
 adminer:
-  image: dockerizedrupal/adminer:1.0.12
+  image: dockerizedrupal/adminer:1.0.13
   hostname: adminer
   ports:
     - "80:80"
