@@ -1,5 +1,5 @@
 adminer:
-  image: dockerizedrupal/adminer:1.0.15
+  image: dockerizedrupal/adminer:1.1.0
   hostname: adminer
   ports:
     - "80:80"
@@ -15,10 +15,11 @@ adminer:
     - MYSQL_USERNAME=container
     - MYSQL_PASSWORD=container
     - PHP_INI_MAX_EXECUTION_TIME=900
+    - HTTP_BASIC_AUTH=Off
     - HTTP_BASIC_AUTH_USERNAME=container
     - HTTP_BASIC_AUTH_PASSWORD=
 adminer-data:
-  image: dockerizedrupal/data:1.0.3
+  image: dockerizedrupal/data:1.1.0
   hostname: adminer-data
   volumes:
     - /adminer

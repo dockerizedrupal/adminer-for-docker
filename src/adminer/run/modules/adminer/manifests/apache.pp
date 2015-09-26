@@ -2,7 +2,7 @@ class adminer::apache {
   include adminer::apache::server_name
   include adminer::apache::timeout
 
-  if $http_basic_auth_password {
+  if $http_basic_auth == "On" {
     include adminer::apache::http_basic_auth
   }
 

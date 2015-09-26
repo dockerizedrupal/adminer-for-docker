@@ -8,7 +8,7 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.0.3
+      dockerizedrupal/data:1.1.0
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -24,10 +24,12 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       -e MYSQL_PORT="3306" \
       -e MYSQL_USERNAME="container" \
       -e MYSQL_PASSWORD="container" \
+      -e PHP_INI_MAX_EXECUTION_TIME="900" \
+      -e HTTP_BASIC_AUTH="Off" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.15
+      dockerizedrupal/adminer:1.1.0
 
 ## Connect directly to MySQL server by linking to another Docker container
 
@@ -35,7 +37,7 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.0.3
+      dockerizedrupal/data:1.1.0
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -50,18 +52,19 @@ A [Docker](https://docker.com/) container for [Adminer](http://www.adminer.org/)
       -e MYSQL_USERNAME="container" \
       -e MYSQL_PASSWORD="container" \
       -e PHP_INI_MAX_EXECUTION_TIME="900" \
+      -e HTTP_BASIC_AUTH="Off" \
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.0.15
+      dockerizedrupal/adminer:1.1.0
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.0.15 \
-      && sudo docker build -t dockerizedrupal/adminer:1.0.15   . \
+      && git checkout 1.1.0 \
+      && sudo docker build -t dockerizedrupal/adminer:1.1.0 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
