@@ -1,6 +1,8 @@
 # docker-adminer
 
-A Docker image for [Adminer](http://www.adminer.org/) that is used in the [Dockerized Drupal](https://dockerizedrupal.com/) project.
+A Docker image for [Adminer](http://www.adminer.org/).
+
+This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) initiative.
 
 ## Run the container
 
