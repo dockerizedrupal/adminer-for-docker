@@ -31,7 +31,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.1.0
+      dockerizedrupal/adminer:1.1.1
 
 ## Connect directly to MySQL server by linking to another Docker container
 
@@ -58,15 +58,15 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.1.0
+      dockerizedrupal/adminer:1.1.1
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
       && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.0 \
-      && sudo docker build -t dockerizedrupal/adminer:1.1.0 . \
+      && git checkout 1.1.1 \
+      && sudo docker build -t dockerizedrupal/adminer:1.1.1 . \
       && cd -
 
 ## Changing the container behaviour on runtime through environment variables
