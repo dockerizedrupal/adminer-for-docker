@@ -23,4 +23,4 @@ adminer-data:
   hostname: adminer-data
   entrypoint: ["/bin/echo", "Data-only container for Adminer."]
   volumes:
-    - /redis
+    - /adminer
