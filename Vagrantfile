@@ -13,7 +13,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.hostname = "adminer"
 
-  config.vm.provider "adminer" do |v|
+  config.vm.provider "virtualbox" do |v|
     name = "dockerizedrupal-adminer-for-docker-" + VERSION
 
     name.gsub!(".", "-")
