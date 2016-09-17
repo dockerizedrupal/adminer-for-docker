@@ -1,8 +1,6 @@
-# docker-adminer
+# adminer-for-docker
 
 A Docker image for [Adminer](http://www.adminer.org/).
-
-This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) initiative.
 
 ## Run the container
 
@@ -10,7 +8,8 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.1.0
+      --entrypoint /bin/echo \
+      dockerizedrupal/adminer:2.0.0 "Data-only container for Adminer."
 
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -31,7 +30,7 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.1.1
+      dockerizedrupal/adminer:2.0.0
 
 ## Connect directly to MySQL server by linking to another Docker container
 
@@ -39,7 +38,8 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       --name "${CONTAINER}" \
       -h "${CONTAINER}" \
       -v /adminer \
-      dockerizedrupal/data:1.1.0
+      --entrypoint /bin/echo \
+      dockerizedrupal/adminer:2.0.0 "Data-only container for Adminer."
       
     CONTAINER="adminer" && sudo docker run \
       --name "${CONTAINER}" \
@@ -58,20 +58,16 @@ This project is part of the [Dockerized Drupal](https://dockerizedrupal.com/) in
       -e HTTP_BASIC_AUTH_USERNAME="container" \
       -e HTTP_BASIC_AUTH_PASSWORD="" \
       -d \
-      dockerizedrupal/adminer:1.1.1
+      dockerizedrupal/adminer:2.0.0
 
 ## Build the image
 
     TMP="$(mktemp -d)" \
-      && git clone https://github.com/dockerizedrupal/docker-adminer.git "${TMP}" \
+      && git clone https://github.com/dockerizedrupal/adminer-for-docker.git "${TMP}" \
       && cd "${TMP}" \
-      && git checkout 1.1.1 \
-      && sudo docker build -t dockerizedrupal/adminer:1.1.1 . \
+      && git checkout 2.0.0 \
+      && sudo docker build -t dockerizedrupal/adminer:2.0.0 . \
       && cd -
-
-## Changing the container behaviour on runtime through environment variables
-
-    // TODO
 
 ## License
 
