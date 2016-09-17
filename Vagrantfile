@@ -11,7 +11,7 @@ MEMORY_SIZE = 512
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.hostname = "redis"
+  config.vm.hostname = "adminer"
 
   config.vm.provider "adminer" do |v|
     name = "dockerizedrupal-adminer-for-docker-" + VERSION
